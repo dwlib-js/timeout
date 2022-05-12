@@ -1,0 +1,56 @@
+{
+  "name": "@dwlib/timeout",
+  "version": "1.0.0",
+  "description": "Timeout API",
+  "main": "lib/index.js",
+  "imports": {
+    "#intrinsic": "@dwlib/intrinsic",
+    "#intrinsic/*": "@dwlib/intrinsic/*",
+    "#type": "@dwlib/type",
+    "#type/*": "@dwlib/type/*",
+    "#internal-slot": "@dwlib/internal-slot",
+    "#internal-slot/*": "@dwlib/internal-slot/*",
+    "#internal": {
+      "node": {
+        "require": "./lib/internal/index-node.js",
+        "import": "./lib/internal/index-node.mjs"
+      },
+      "default": {
+        "require": "./lib/internal/index.js",
+        "import": "./lib/internal/index.mjs"
+      }
+    }
+  },
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "import": "./lib/index.mjs"
+    },
+    "./*": {
+      "require": "./lib/*.js",
+      "import": "./lib/*.mjs"
+    }
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwlib-js/timeout.git"
+  },
+  "keywords": [
+    "timeout"
+  ],
+  "author": "Pavel Wolf",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/dwlib-js/timeout/issues"
+  },
+  "homepage": "https://github.com/dwlib-js/timeout#readme",
+  "dependencies": {
+    "@dwlib/internal-slot": "^1.0.0",
+    "@dwlib/intrinsic": "^1.0.0",
+    "@dwlib/type": "^1.0.0"
+  }
+}
