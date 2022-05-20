@@ -50,29 +50,29 @@ import TimeoutWait from '@dwlib/timeout/TimeoutWait';
 ```
 
 ## API
-- *class* Timeout
-  - *static* Error
-  - *static* abort(delay)
-  - *static* interval(callback, delay)
-  - *static* wait(delay)
-  - constructor(callback, delay)
-  - *get* active
-  - *get* canceled
-  - *get* recurrent
-  - cancel()
-  - refresh()
-- *class* TimeoutError
-  - constructor([message])
+- `class Timeout`
+  - `static Error = TimeoutError`
+  - `static abort(delay: number) => Promise<void, TimeoutError>`
+  - `static interval(callback: Function, delay: number) => Timeout`
+  - `static wait(delay: number) => Promise<void>`
+  - `constructor(callback: Function, delay: number)`
+  - `get active => boolean`
+  - `get canceled => boolean`
+  - `get recurrent => boolean`
+  - `cancel() => this`
+  - `refresh() => this`
+- `class TimeoutError`
+  - `constructor([message: string])`
 
 ### Builtins
-- IsTimeout(argument)
-- IsTimeoutError(argument)
-- TimeoutAbort(delay)
-- TimeoutActive(timeout)
-- TimeoutCancel(timeout)
-- TimeoutCanceled(timeout)
-- new TimeoutError([message])
-- TimeoutInterval(callback, delay)
-- TimeoutRecurrent(timeout)
-- TimeoutRefresh(timeout)
-- TimeoutWait(delay)
+- `IsTimeout(argument: any) => boolean`
+- `IsTimeoutError(argument: any) => boolean`
+- `TimeoutAbort(delay: number) => Promise<void, TimeoutError>`
+- `TimeoutActive(timeout: Timeout) => boolean`
+- `TimeoutCancel(timeout: Timeout) => boolean`
+- `TimeoutCanceled(timeout: Timeout) => boolean`
+- `new TimeoutError([message: string])`
+- `TimeoutInterval(callback: Function, delay: number) => Timeout`
+- `TimeoutRecurrent(timeout: Timeout) => boolean`
+- `TimeoutRefresh(timeout: Timeout) => boolean`
+- `TimeoutWait(delay: number) => Promise<void>`
